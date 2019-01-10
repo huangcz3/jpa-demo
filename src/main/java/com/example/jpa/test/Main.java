@@ -8,11 +8,20 @@ package com.example.jpa.test;
 public class Main {
 
 	public static void main(String[] args) {
-		String str = "a,b,c, ,";
-		String[] arry = str.trim().split(",");
-		System.out.println(arry.length);
+		String a = "黄玥";
+		System.out.println(clearBracket(a));
+
 
 
 	}
 
+	public static String clearBracket(String str) {
+
+		if (str.contains("（")||str.contains("）")){
+			String bracket = str.substring(str.indexOf("（"), str.indexOf("）") + 1);
+			str = str.replace(bracket, "");
+		}
+		return str;
+
+	}
 }
